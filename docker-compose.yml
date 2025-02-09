@@ -1,0 +1,30 @@
+version: "1.0.0"
+
+services:
+  userservies:
+    build: .
+    ports:
+      - 50051:50051
+    volumes:
+      - userservies:/app
+    environment:
+      - DB_URI=mongodb://mongo:27017/
+      - DB_NAME=Microservice-demo-user
+      - TOKEN_SECRET=microservicedemonodejs
+      - TOKEN_LIFE=3600000000
+      - HOST=0.0.0.0
+      - PORT=50051
+    depends_on:
+      - mongo
+
+
+  mongo:
+    image: mongo
+    restart: always
+    volumes:
+      - mongodb:/data/db
+volumes:
+  userservies:
+    driver: local
+  mongodb:
+    driver: local
