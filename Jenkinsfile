@@ -5,6 +5,7 @@ pipeline{
             steps {
                     script{
                             echo "hello world"
+                            sh 'docker '
                         }
                     }
         }
