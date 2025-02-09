@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    tools {
+        npm "nodejs"
+    }
     stages{
 
          stage("build project"){
@@ -7,7 +10,7 @@ pipeline{
                         script{
                                 echo "build project"
                                 sh 'npm run build'
-                              
+
                             }
                         }
             } //end building
