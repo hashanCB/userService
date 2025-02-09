@@ -5,7 +5,7 @@ pipeline{
             steps {
                     script{
                             echo "build image"
-                            sh 'docker build -t userservice:1.0.0'
+                            sh 'docker build -t userservice:1.0.0 .'
                             sh 'docker images'
                         }
                     }
