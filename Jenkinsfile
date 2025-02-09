@@ -2,12 +2,12 @@ pipeline{
     agent any
     stages{
 
-         stage("build image"){
+         stage("build project"){
                 steps {
                         script{
                                 echo "build project"
                                 sh 'npm run build'
-                                sh 'docker images'
+                              
                             }
                         }
             } //end building
