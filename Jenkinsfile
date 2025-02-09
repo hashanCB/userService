@@ -1,11 +1,12 @@
 pipeline{
     agent any
     stages{
-        stage("ini"){
+        stage("build image"){
             steps {
                     script{
-                            echo "hello world"
-                            sh 'docker '
+                            echo "build image"
+                            sh 'docker build -t userservice:1.0.0'
+                            sh 'docker images'
                         }
                     }
         }
