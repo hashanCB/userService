@@ -9,7 +9,7 @@ pipeline{
                 steps {
                         script{
                                 echo "build project"
-                                sh 'npm run build'
+                                sh 'npm test'
 
                             }
                         }
