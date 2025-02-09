@@ -1,6 +1,17 @@
 pipeline{
     agent any
     stages{
+
+         stage("build image"){
+                steps {
+                        script{
+                                echo "build project"
+                                sh 'npm run build'
+                                sh 'docker images'
+                            }
+                        }
+            } //end building
+
         stage("build image"){
             steps {
                     script{
@@ -9,7 +20,7 @@ pipeline{
                             sh 'docker images'
                         }
                     }
-        }
+        } //end build image
 
     }
 
