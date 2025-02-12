@@ -4,10 +4,9 @@ const { MongoClient } = require("mongodb");
 const services = require('./proto/user_grpc_pb');
 const API = require("./api");
 
-const DB_URI = process.env.DB_URI || 'mongodb://localhost:27017';
 
 // Mongo Connection
-const dbClient = new MongoClient(DB_URI, { useUnifiedTopology: true });
+const dbClient = new MongoClient(process.env.DB_URI, { useUnifiedTopology: true });
 let api = null;
 
 async function connectDB() {
