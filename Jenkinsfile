@@ -15,6 +15,12 @@ pipeline{
     }
     stages{
 
+        stage("IncrementVersion"){
+            steps{
+                IncrementVersion()
+            }
+        }
+
          stage("build project"){
                 steps {
                         script{
@@ -27,7 +33,7 @@ pipeline{
 
         stage("build image"){
             steps {
-                  DockerBuildimage()
+                  DockerBuildimage("hashanc2/userservice:${env.IMAGE_NAME}")
                     }
         } //end build image
 
@@ -39,7 +45,7 @@ pipeline{
 
          stage("Docker image push"){
             steps {
-                  Dockerpush("hashanc2/userservice:1.0.1")
+                  Dockerpush("hashanc2/userservice:${env.IMAGE_NAME}")
                     }
         } //end build image
 
