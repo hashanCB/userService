@@ -39,7 +39,7 @@ pipeline{
 
          stage("Docker image push"){
             steps {
-                  DockerPush("hashanc2/userservice:1.0.1")
+                  Dockerpush("hashanc2/userservice:1.0.1")
                     }
         } //end build image
 
