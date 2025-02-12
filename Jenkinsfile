@@ -33,7 +33,7 @@ pipeline{
 
             stage("Docker Lgoin"){
             steps {
-                  DockerLgoin()
+                  Dockerlogin()
                     }
         } //end build image
 
