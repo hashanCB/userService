@@ -2,7 +2,7 @@ library(
     identifier:"shared-library-Jenkins@main",
     retriever:modernSCM([
         $class:'GitSCMSource',
-        remote:'git@github.com:hashanCB/shared-library-Jenkins.git',
+        remote:'https://github.com/hashanCB/shared-library-Jenkins.git',
         credentialsid:'	github-credentials'
     ])
 
