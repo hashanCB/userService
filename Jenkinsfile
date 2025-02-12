@@ -31,6 +31,20 @@ pipeline{
                     }
         } //end build image
 
+            stage("Docker Lgoin"){
+            steps {
+                  DockerLgoin()
+                    }
+        } //end build image
+
+         stage("Docker image push"){
+            steps {
+                  DockerPush("hashanc2/userservice:1.0.1")
+                    }
+        } //end build image
+
+
+
     }
 
 
