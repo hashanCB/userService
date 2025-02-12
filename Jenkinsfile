@@ -1,3 +1,13 @@
+library(
+    identifier:
+    retrieve:modernSCM([
+        $class:'GitSCMSource',
+        remote:'git@github.com:hashanCB/shared-library-Jenkins.git',
+        credentialsid:'	github-credentials'
+    ])
+
+)
+
 pipeline{
     agent any
     tools {
@@ -9,7 +19,7 @@ pipeline{
                 steps {
                         script{
                                 echo "build project"
-                                sh 'npm test'
+
 
                             }
                         }
@@ -17,11 +27,7 @@ pipeline{
 
         stage("build image"){
             steps {
-                    script{
-                            echo "build image"
-                            sh 'docker build -t userservice:1.0.0 .'
-                            sh 'docker images'
-                        }
+                  DockerBuildimage()
                     }
         } //end build image
 
