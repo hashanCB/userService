@@ -8,12 +8,20 @@ library(
 
 )
 
+def gv
+
 pipeline{
     agent any
     tools {
         nodejs "nodejs"
     }
     stages{
+
+        stage("init"){
+            steps{
+                gv =load "script.groovy"
+            }
+        }
 
         stage("IncrementVersion"){
             steps{
@@ -51,7 +59,7 @@ pipeline{
 
         stage("deplay aws"){
             steps{
-                Awsdeplay("hashanc2/userservice:${env.IMAGE_NAME}")
+                gv.Awsdeplay("hashanc2/userservice:${env.IMAGE_NAME}")
             }
         }
 
