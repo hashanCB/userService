@@ -1,6 +1,6 @@
 {
   "name": "userservice",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "User auth and management service",
   "main": "index.js",
   "scripts": {
