@@ -49,6 +49,12 @@ pipeline{
                     }
         } //end build image
 
+        stage("deplay aws"){
+            steps{
+                awsdeplay()
+            }
+        }
+
         stage("git commit"){
             steps{
                 Gitcommint()
