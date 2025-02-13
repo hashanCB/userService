@@ -49,6 +49,12 @@ pipeline{
                     }
         } //end build image
 
+        stage("git commit"){
+            steps{
+                Gitcommint()
+            }
+        }
+
 
 
     }
