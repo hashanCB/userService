@@ -19,7 +19,10 @@ pipeline{
 
         stage("init"){
             steps{
-                gv =load "script.groovy"
+                script{
+                    gv =load "script.groovy"
+                }
+                
             }
         }
 
@@ -59,7 +62,10 @@ pipeline{
 
         stage("deplay aws"){
             steps{
-                gv.Awsdeplay("hashanc2/userservice:${env.IMAGE_NAME}")
+                script{
+                    gv.Awsdeplay("hashanc2/userservice:${env.IMAGE_NAME}")
+                }
+                
             }
         }
 
