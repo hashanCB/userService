@@ -51,7 +51,7 @@ pipeline{
 
         stage("deplay aws"){
             steps{
-                awsdeplay()
+                Awsdeplay()
             }
         }
 
