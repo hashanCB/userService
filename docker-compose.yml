@@ -2,7 +2,8 @@ version: "1.0.0"
 
 services:
   userservies:
-    build: .
+    image: ${IMAGE_NAME}
+    # build: .
     ports:
       - 50051:50051
     volumes:
